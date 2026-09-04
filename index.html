@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>betweenthebindings</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="brand">betweenthebindings</a>
+    <nav class="nav-links">
+      <a href="writing.html">writing</a>
+      <a href="about.html">about</a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+        <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      </a>
+    </nav>
+  </header>
+
+  <section class="hero-section">
+    <div class="constellation-wrapper">
+      <div class="star s1">★</div>
+      <div class="star s2">★</div>
+      <div class="star s3">★</div>
+      <p class="hero-text">i want auroras & sad prose</p>
+      <div class="star s4">★</div>
+      <div class="star s5">★</div>
+      <div class="star s6">★</div>
+      <div class="star s7">★</div>
+    </div>
+  </section>
+
+  <section class="latest-writing-section">
+    <h2 class="section-title-left">latest writing</h2>
+    <div class="writing-content">
+      <div class="writing-image-container">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200" alt="Modern room setup" />
+      </div>
+      <div class="writing-details">
+        <h3 class="writing-heading">Adventure Starts Here</h3>
+        <p class="writing-subtext">the death of the clean girl</p>
+        <a href="story.html" class="pill-btn primary-btn">Read story</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="journal-section">
+    <div class="journal-sidebar">
+      <h2 class="section-title-journal">from the journal</h2>
+      <a href="writing.html" class="pill-btn outline-btn">see more</a>
+    </div>
+
+
+    <div class="product-grid">
+      <!-- Card 1 -->
+      <a href="story.html" class="journal-card">
+        <div class="card-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1585336261026-8f5786372969?q=80&w=800" alt="Redefine Success Cover" />
+        </div>
+        <p class="journal-card-title">Redefine Success</p>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="story.html" class="journal-card">
+        <div class="card-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=800" alt="Small Steps Create Big Shifts Cover" />
+        </div>
+        <p class="journal-card-title">Small Steps Create Big Shifts</p>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="story.html" class="journal-card">
+        <div class="card-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800" alt="Turn Intention Into Action Cover" />
+        </div>
+        <p class="journal-card-title">Turn Intention Into Action</p>
+      </a>
+    </div>
+  </section>
+
+<!-- Y2K Doodle & Stamp Canvas -->
+<section class="doodle-section">
+  <div class="doodle-header">
+    <h2 class="doodle-title">✦ leave your mark ✦</h2>
+    <p class="doodle-subtitle">doodle in silver glitter or stamp the canvas</p>
+  </div>
+
+  <div class="doodle-container">
+    <!-- Toolbar -->
+    <div class="doodle-toolbar">
+      <button class="doodle-btn active" id="penBtn" title="Glitter Pen">Pen</button>
+      <button class="doodle-btn" id="starBtn" title="Star Stamp">★ Star</button>
+      <button class="doodle-btn" id="heartBtn" title="Heart Stamp">♥ Heart</button>
+      <button class="doodle-btn clear-btn" id="clearBtn" title="Clear Canvas">✕ Clear</button>
+    </div>
+
+    <!-- Canvas -->
+    <canvas id="doodleCanvas"></canvas>
+  </div>
+</section>
+
+
+  <footer class="site-footer">
+    <div class="footer-brand">betweenthebindings</div>
+    <div class="footer-contact">
+      <a href="https://instagram.com" target="_blank" class="footer-insta">
+        <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      </a>
+    </div>
+  </footer>
+
+
+
+
+<!-- Y2K Digital Pet Widget -->
+<div class="pet-widget" id="petWidget">
+  <div class="pet-screen">
+    <!-- Speech Bubble -->
+    <div class="pet-bubble" id="petBubble">✦ click to play!</div>
+
+    <!-- Pixel Pet Character -->
+    <div class="pet-character" id="petChar">
+      <span class="pet-face">( • ‿ • )</span>
+      <span class="pet-accessory" id="petAcc"></span>
+    </div>
+
+    <!-- Hearts/Sparkles Animation Container -->
+    <div class="pet-particles" id="petParticles"></div>
+  </div>
+
+  <!-- Interactive Buttons -->
+  <div class="pet-controls">
+    <button class="pet-btn" id="feedPetBtn" title="Feed Star">Feed</button>
+    <button class="pet-btn" id="stylePetBtn" title="Try Shades">🕶️ Fit</button>
+    <button class="pet-btn" id="patPetBtn" title="Pat Head">♡ Pat</button>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+  <script src="sparkles.js"></script>
+
+</body>
+</html>
