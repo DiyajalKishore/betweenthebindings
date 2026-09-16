@@ -8,7 +8,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         about: resolve(__dirname, 'about.html'),
         art: resolve(__dirname, 'art.html'),
-        buriedbetweenthebindings: resolve(__dirname, 'buriedbetweenbindings.html'),
+        buriedbetweenthebindings: resolve(__dirname, 'buriedbetweenthebindings.html'),
         creatingcommunity: resolve(__dirname, 'creatingcommunity.html'),
         griefgathersandgrows: resolve(__dirname, 'griefgathersandgrows.html'),
         melvilleartmile: resolve(__dirname, 'melvilleartmile.html'),
