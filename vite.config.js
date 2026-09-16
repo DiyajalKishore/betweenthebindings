@@ -4,11 +4,16 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: './index.html',
-        about: './about.html',
-        story: './story.html',
-        writing: './writing.html',
-      },
-    },
-  },
+        main: 'index.html',
+        about: 'about.html',
+        art: 'art.html',
+        buriedbetweenbindings: 'buriedbetweenbindings.html',
+        creatingcommunity: 'creatingcommunity.html',
+        griefgathersandgrows: 'griefgathersandgrows.html',
+        melvilleartmile: 'melvilleartmile.html',
+        thunee: 'thunee.html',
+        writing: 'writing.html'
+      }
+    }
+  }
 });
