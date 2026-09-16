@@ -502,7 +502,7 @@ p, a, button, .nav-links a, .btn-label, .article-date, .story-date, .story-subhe
 /* Y2K Tamagotchi Floating Keychain */
 .pet-widget {
   position: fixed;
-  bottom: 20px;
+  bottom: 150px;
   right: 20px;
   width: 170px;
   background: #34434d; /* Inky slate screen casing */
@@ -617,3 +617,84 @@ p, a, button, .nav-links a, .btn-label, .article-date, .story-date, .story-subhe
   color: #34434d;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
+
+#quote {
+  text-align: center;
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  color: #d8e0e8;
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 40px 0;
+}
+
+.caption {
+  text-align: center;
+  color: #bfc9d6; /* soft gray-blue to match your theme */
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.caption {
+  font-size: 13px !important;
+}
+
+
+.display-image {
+  display: block;
+  margin: 20px auto;
+  width: 75%;       /* adjust this percentage to make it smaller or larger */
+  max-width: 500px; /* prevents it from getting too big on large screens */
+  border-radius: 8px;
+}
+
+.carousel {
+  width: 400px;          /* visible frame */
+  overflow: hidden;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-track img {
+  width: 400px;
+  flex-shrink: 0;
+}
+
+.white-link {
+  color: white;
+  text-decoration: none; /* optional: removes underline */
+}
+
+.white-link:hover {
+  color: #ddd; /* softer shade when hovered */
+}
+
+.share-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.share-icon {
+  width: 30px;
+  height: 30px;
+  filter: invert(1); /* makes dark SVG appear white */
+  transition: opacity 0.3s ease;
+}
+
+.share-btn:hover .share-icon {
+  opacity: 0.7;
+}
+
+
+
+
+
+
+

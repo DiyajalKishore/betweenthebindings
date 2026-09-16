@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -16,7 +18,11 @@
     <nav class="nav-links">
       <a href="writing.html">writing</a>
       <a href="about.html" class="active">about</a>
-      <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+      <a href="https://www.instagram.com/btwnthebindings_?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
+      <a href="https://substack.com/@betweenthebindings" target="_blank" style="color:white; font-size:24px;">
+       <img src="./images/substack-logo.svg" alt="Substack" style="width:24px; height:24px; filter:invert(1);">
+      </a>
+
         <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
       </a>
     </nav>
@@ -39,7 +45,7 @@
       </div>
 
       <div class="about-image-container">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000" alt="Keri Lae standing near window" />
+        <img src="./images/about.jpg" alt="Keri Lae " />
       </div>
     </div>
   </main>
@@ -47,9 +53,9 @@
   <footer class="site-footer">
     <div class="footer-brand">betweenthebindings</div>
     <div class="footer-contact">
-      <a href="https://instagram.com" target="_blank" class="footer-insta">
-        <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-      </a>
+      <button class="share-btn" onclick="shareContent()">
+       <img src="/images/share-icon.svg" alt="Share" class="share-icon">
+      </button>
     </div>
   </footer>
 

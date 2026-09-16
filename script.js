@@ -7,6 +7,39 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+function shareContent() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Between the Bindings',
+      text: 'Check out this video/article!',
+      url: window.location.href
+    }).catch(err => console.log('Share failed:', err));
+  } else {
+    alert('Sharing not supported on this browser');
+  }
+}
+
+
+
+
+let index = 0;
+const track = document.querySelector('.carousel-track');
+const slides = document.querySelectorAll('.carousel-track img');
+const total = slides.length;
+
+function showSlide(i) {
+  track.style.transform = `translateX(-${i * 400}px)`;
+}
+
+function autoScroll() {
+  index = (index + 1) % total;
+  showSlide(index);
+}
+
+// change slide every 3 seconds
+setInterval(autoScroll, 3000);
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('doodleCanvas');
   if (!canvas) return;
