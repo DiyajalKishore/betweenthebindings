@@ -37,198 +37,84 @@ function autoScroll() {
 }
 
 // change slide every 3 seconds
-setInterval(autoScroll, 3000);
+if (track) setInterval(autoScroll, 3000);
 
+function initArrowCarousel(root) {
+  const images = JSON.parse(root.dataset.images || "[]");
+  const track = root.querySelector('.ac-track');
+  const counter = root.querySelector('.ac-counter');
+  const dotsEl = root.querySelector('.ac-dots');
+  const prevBtn = root.querySelector('.ac-prev');
+  const nextBtn = root.querySelector('.ac-next');
+  let index = 0;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const canvas = document.getElementById('doodleCanvas');
-  if (!canvas) return;
+  images.forEach((img) => {
+    const slide = document.createElement('div');
+    slide.className = 'ac-slide';
+    slide.innerHTML = `<img src="${img.src}" alt="${img.caption || ''}"><div class="ac-caption">${img.caption || ''}</div>`;
+    track.appendChild(slide);
 
-  const ctx = canvas.getContext('2d');
-  const penBtn = document.getElementById('penBtn');
-  const starBtn = document.getElementById('starBtn');
-  const heartBtn = document.getElementById('heartBtn');
-  const clearBtn = document.getElementById('clearBtn');
-
-  let mode = 'pen'; 
-  let isDrawing = false;
-
-  // Set internal resolution matching display size
-  function resizeCanvas() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-  
-  // Initial size setup
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-
-  // Button Mode Toggles
-  penBtn.addEventListener('click', () => {
-    mode = 'pen';
-    [penBtn, starBtn, heartBtn].forEach(b => b.classList.remove('active'));
-    penBtn.classList.add('active');
+    const dot = document.createElement('button');
+    dot.className = 'ac-dot';
+    dot.setAttribute('aria-label', 'Go to image');
+    dotsEl.appendChild(dot);
   });
 
-  starBtn.addEventListener('click', () => {
-    mode = 'star';
-    [penBtn, starBtn, heartBtn].forEach(b => b.classList.remove('active'));
-    starBtn.classList.add('active');
-  });
+  const dots = Array.from(dotsEl.children);
 
-  heartBtn.addEventListener('click', () => {
-    mode = 'heart';
-    [penBtn, starBtn, heartBtn].forEach(b => b.classList.remove('active'));
-    heartBtn.classList.add('active');
-  });
-
-  clearBtn.addEventListener('click', () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-  });
-
-  // Calculate accurate mouse position inside canvas
-  function getPos(e) {
-    const rect = canvas.getBoundingClientRect();
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-    return {
-      x: clientX - rect.left,
-      y: clientY - rect.top
-    };
+  function render() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    counter.textContent = `${index + 1} / ${images.length}`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
   }
 
-  function startDrawing(e) {
-    isDrawing = true;
-    const pos = getPos(e);
-
-    if (mode === 'pen') {
-      ctx.beginPath();
-      ctx.moveTo(pos.x, pos.y);
-      // Draw immediate dot on click
-      ctx.fillStyle = '#ffffff';
-      ctx.arc(pos.x, pos.y, 1.5, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.moveTo(pos.x, pos.y);
-    } else {
-      drawStamp(pos.x, pos.y);
-    }
+  function goTo(i) {
+    index = (i + images.length) % images.length;
+    render();
   }
 
-  function draw(e) {
-    if (!isDrawing) return;
-    if (e.type === 'touchmove') e.preventDefault(); // Prevent scrolling while doodling
+  nextBtn.addEventListener('click', () => goTo(index + 1));
+  prevBtn.addEventListener('click', () => goTo(index - 1));
+  dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
 
-    const pos = getPos(e);
+  render();
+}
 
-    if (mode === 'pen') {
-      ctx.lineTo(pos.x, pos.y);
-      ctx.strokeStyle = '#ffffff';
-      ctx.lineWidth = 3;
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
-      ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
-      ctx.shadowBlur = 6;
-      ctx.stroke();
-    }
-  }
+document.querySelectorAll('.ac-carousel').forEach(initArrowCarousel);
 
-  function stopDrawing() {
-    isDrawing = false;
-    ctx.beginPath();
-  }
+// Scroll reveal for homepage sections
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach((el) => io.observe(el));
+} else {
+  revealEls.forEach((el) => el.classList.add('in'));
+}
 
-  function drawStamp(x, y) {
-    ctx.font = '24px sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillStyle = '#ffffff';
-    ctx.shadowColor = 'rgba(255, 255, 255, 0.9)';
-    ctx.shadowBlur = 8;
 
-    if (mode === 'star') ctx.fillText('✦', x, y);
-    if (mode === 'heart') ctx.fillText('♥', x, y);
-  }
-
-  // Mouse Listeners
-  canvas.addEventListener('mousedown', startDrawing);
-  canvas.addEventListener('mousemove', draw);
-  canvas.addEventListener('mouseup', stopDrawing);
-  canvas.addEventListener('mouseleave', stopDrawing);
-
-  // Touch Listeners (Mobile / Tablet)
-  canvas.addEventListener('touchstart', startDrawing, { passive: false });
-  canvas.addEventListener('touchmove', draw, { passive: false });
-  canvas.addEventListener('touchend', stopDrawing);
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const petChar = document.getElementById('petChar');
-  const petFace = petChar?.querySelector('.pet-face');
-  const petAcc = document.getElementById('petAcc');
-  const petBubble = document.getElementById('petBubble');
-  const petParticles = document.getElementById('petParticles');
-
-  const feedBtn = document.getElementById('feedPetBtn');
-  const styleBtn = document.getElementById('stylePetBtn');
-  const patBtn = document.getElementById('patPetBtn');
-
-  if (!petChar || !feedBtn) return;
-
-  let hasShades = false;
-
-  // Trigger floating particle effect
-  function spawnParticle(symbol, xPercent) {
-    const p = document.createElement('span');
-    p.className = 'pet-particle';
-    p.textContent = symbol;
-    p.style.left = `${xPercent}%`;
-    p.style.bottom = '20px';
-    petParticles.appendChild(p);
-
-    setTimeout(() => p.remove(), 800);
-  }
-
-  // 1. Feed Action
-  feedBtn.addEventListener('click', () => {
-    petFace.textContent = '( ˆ o ˆ )';
-    petBubble.textContent = '✦ yum! ';
-    petChar.classList.add('bounce');
-    
-    spawnParticle('✨', 30);
-    spawnParticle('✦', 70);
-
-    setTimeout(() => {
-      petFace.textContent = '( • ‿ • )';
-      petChar.classList.remove('bounce');
-      petBubble.textContent = '✦ i want to destroy the earth';
-    }, 1200);
+// Writing page category filter
+const filterBar = document.getElementById('filters');
+const feed = document.getElementById('feed');
+if (filterBar && feed) {
+  filterBar.addEventListener('click', (e) => {
+    const btn = e.target.closest('.chip');
+    if (!btn) return;
+    const f = btn.dataset.f;
+    filterBar.querySelectorAll('.chip').forEach((c) => c.classList.toggle('active', c === btn));
+    feed.classList.toggle('filtered', f !== 'all');
+    feed.querySelectorAll('.article-card').forEach((card) => {
+      card.classList.toggle('gone', f !== 'all' && card.dataset.cat !== f);
+      card.classList.add('in');
+    });
   });
+}
 
-  // 2. Style/Fit Action
-  styleBtn.addEventListener('click', () => {
-    hasShades = !hasShades;
-    if (hasShades) {
-      petAcc.textContent = '🧢';
-      petFace.textContent = '(  • ‿ • )';
-      petBubble.textContent = '✦ fit check';
-    } else {
-      petAcc.textContent = '';
-      petBubble.textContent = '✦ back to casual';
-    }
-  });
-
-  // 3. Pat Action
-  patBtn.addEventListener('click', () => {
-    petFace.textContent = '( ✦ ‿ ✦ )';
-    petBubble.textContent = '✦ happy pet!';
-    petChar.classList.add('bounce');
-
-    spawnParticle('♥', 45);
-
-    setTimeout(() => {
-      petFace.textContent = '( • ‿ • )';
-      petChar.classList.remove('bounce');
-    }, 1000);
-  });
-});
+const autoVideos = document.querySelectorAll('video[data-autoplay]');
+if (autoVideos.length && 'IntersectionObserver' in window) {
+  const vo = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause(); });
+  }, { threshold: 0.4 });
+  autoVideos.forEach((v) => vo.observe(v));
+}

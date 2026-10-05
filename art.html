@@ -11,16 +11,7 @@
 </head>
 <body>
 
-  <header class="navbar">
-    <a href="index.html" class="brand">betweenthebindings</a>
-    <nav class="nav-links">
-      <a href="writing.html" class="active">writing</a>
-      <a href="about.html">about</a>
-      <a href="https://www.instagram.com/btwnthebindings_?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
-        <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-      </a>
-    </nav>
-  </header>
+  <div id="site-nav" data-active="writing.html"></div>
 
   <main class="story-wrapper">
     <a href="writing.html" class="back-link">← Back to writing</a>
@@ -52,7 +43,7 @@
             In this political climate, graffiti is used as an art medium, a way of communicating a message that no one seems to want to receive. It is the “Free Palestine” one sees on the stop sign in their office parking lot. It is the “Eat the Rich” one sees on a McDonald’s billboard on the highway. It is the “Say No to Violence” littered across stickers pasted on public bathroom walls. 
         </p>
 
-        <img src="./images/art1.jpg" alt="art img" 
+        <img loading="lazy" decoding="async" src="./images/art1.jpg" alt="art img" 
         class="display-image"/>
         
         <p class="caption">
@@ -81,7 +72,7 @@
 
       </div>
 
-      <img src="./images/arttitle.jpg" alt="art img" 
+      <img loading="lazy" decoding="async" src="./images/arttitle.jpg" alt="art img" 
         class="display-image"/>
         
         <p class="caption">
@@ -107,6 +98,7 @@
     </div>
   </footer>
 
+  <script type="module" src="navbar.js"></script>
   <script type="module" src="script.js"></script>
 <script type="module" src="sparkles.js"></script>
 </body>

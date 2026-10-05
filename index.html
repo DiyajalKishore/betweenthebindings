@@ -10,105 +10,67 @@
   <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="home">
 
-  <header class="navbar">
-    <a href="index.html" class="brand">betweenthebindings</a>
-    <nav class="nav-links">
-      <a href="writing.html">writing</a>
-      <a href="about.html">about</a>
-      <a href="https://www.instagram.com/btwnthebindings_?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
-        <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-      </a>
-      <a href="https://substack.com/@betweenthebindings" target="_blank" style="color:white; font-size:24px;">
-       <img src="./images/substack-logo.svg" alt="Substack" style="width:24px; height:24px; filter:invert(1);">
-      </a>
-    </nav>
-  </header>
+  <div id="site-nav"></div>
 
   <section class="hero-section">
+    <div class="aurora"><i></i><i></i><i></i></div>
     <div class="constellation-wrapper">
-      <div class="star s1">★</div>
-      <div class="star s2">★</div>
-      <div class="star s3">★</div>
-      <p class="hero-text">i want auroras & sad prose</p>
-      <div class="star s4">★</div>
-      <div class="star s5">★</div>
-      <div class="star s6">★</div>
-      <div class="star s7">★</div>
+      <div class="star s1">★</div><div class="star s2">★</div><div class="star s3">★</div>
+      <p class="hero-text">i want auroras &amp; sad prose</p>
+      <div class="star s4">★</div><div class="star s5">★</div><div class="star s6">★</div><div class="star s7">★</div>
     </div>
   </section>
 
   <section class="latest-writing-section">
     <h2 class="section-title-left">latest writing</h2>
-    <div class="writing-content">
-      <div class="writing-image-container">
-        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200" alt="Modern room setup" />
-      </div>
+    <div class="writing-content reveal">
+      <a href="cleangirl.html" class="cover"><span class="tape"></span><img loading="lazy" decoding="async" src="./images/cleangirl.jpg" alt="death of the clean girl img" /></a>
       <div class="writing-details">
-        <h3 class="writing-heading">Adventure Starts Here</h3>
-        <p class="writing-subtext">the death of the clean girl</p>
-        <a href="story.html" class="pill-btn primary-btn">Read story</a>
+        <span class="tag">feature</span>
+        <h3 class="writing-heading">The Death Of The Clean Girl</h3>
+        <p class="writing-subtext">The clean girl aesthetic whispers, but creative makeup is yelling: “I’m back, bitches!”</p>
+        <a href="cleangirl.html" class="pill-btn primary-btn">Read story</a>
       </div>
     </div>
   </section>
 
-
-  <section class="journal-section">
-    <div class="journal-sidebar">
-      <h2 class="section-title-journal">from the journal</h2>
-      <a href="writing.html" class="pill-btn outline-btn">see more</a>
-    </div>
-
-
-    <div class="product-grid">
-      <!-- Card 1 -->
-      <a href="story.html" class="journal-card">
-        <div class="card-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1585336261026-8f5786372969?q=80&w=800" alt="Redefine Success Cover" />
-        </div>
-        <p class="journal-card-title">Redefine Success</p>
-      </a>
-
-      <!-- Card 2 -->
-      <a href="story.html" class="journal-card">
-        <div class="card-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=800" alt="Small Steps Create Big Shifts Cover" />
-        </div>
-        <p class="journal-card-title">Small Steps Create Big Shifts</p>
-      </a>
-
-      <!-- Card 3 -->
-      <a href="story.html" class="journal-card">
-        <div class="card-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800" alt="Turn Intention Into Action Cover" />
-        </div>
-        <p class="journal-card-title">Turn Intention Into Action</p>
-      </a>
+  <section class="sec">
+    <div class="sec-head reveal"><h2>from the journal</h2><a href="writing.html" class="pill-btn outline-btn">see more</a></div>
+    <div class="feat reveal">
+      <a href="ai.html" class="card big"><img loading="lazy" decoding="async" src="./images/ai.jpg" alt="AI Innovation img" /><span class="tag">news</span><p>Wits student wins Gauteng Falling Walls Lab, Heads to Berlin with AI Innovation</p></a>
+      <a href="baddest.html" class="card"><img loading="lazy" decoding="async" src="./images/baddest.jpg" alt="baddest img" /><span class="tag">slice</span><p>The baddest b*tches ain’t in LA</p></a>
+      <a href="spiderman.html" class="card"><img loading="lazy" decoding="async" src="./images/spiderman.jpg" alt="spiderman img" /><span class="tag">review</span><p>Our favourite friendly neighbourhood Spider-Man is back!</p></a>
     </div>
   </section>
 
-<!-- Y2K Doodle & Stamp Canvas -->
-<section class="doodle-section">
-  <div class="doodle-header">
-    <h2 class="doodle-title">✦ leave your mark ✦</h2>
-    <p class="doodle-subtitle">doodle in silver glitter or stamp the canvas</p>
-  </div>
-
-  <div class="doodle-container">
-    <!-- Toolbar -->
-    <div class="doodle-toolbar">
-      <button class="doodle-btn active" id="penBtn" title="Glitter Pen">Pen</button>
-      <button class="doodle-btn" id="starBtn" title="Star Stamp">★ Star</button>
-      <button class="doodle-btn" id="heartBtn" title="Heart Stamp">♥ Heart</button>
-      <button class="doodle-btn clear-btn" id="clearBtn" title="Clear Canvas">✕ Clear</button>
+  <section class="sec alt">
+    <div class="sec-head reveal"><h2>other writing</h2><a href="otherwriting.html" class="pill-btn outline-btn">see more</a></div>
+    <div class="scrap reveal">
+      <a href="griefgathersandgrows.html" class="paper"><img loading="lazy" decoding="async" src="./images/grief.jpg" alt="grief gathers and grows img" /><span>grief gathers and grows</span></a>
+      <a href="buriedbetweenthebindings.html" class="paper"><img loading="lazy" decoding="async" src="./images/melodrama.jpg.webp" alt="buried between the bindings img" /><span>buried between the bindings</span></a>
     </div>
+  </section>
 
-    <!-- Canvas -->
-    <canvas id="doodleCanvas"></canvas>
-  </div>
-</section>
+  <section class="sec">
+    <div class="sec-head reveal"><h2>from keri's cam</h2><a href="keriscam.html" class="pill-btn outline-btn">see more</a></div>
+    <div id="keris-cam" class="reveal" data-compact></div>
+  </section>
 
+  <section class="sec alt">
+    <div class="sec-head reveal"><h2>social media</h2><a href="socialmedia.html" class="pill-btn outline-btn">see more</a></div>
+    <div class="posts reveal">
+      <a href="socialmedia.html" class="post"><div class="post-head"><b class="avatar">b</b>btwnthebindings_</div><img loading="lazy" decoding="async" src="./images/ig1.jpeg" alt="social media post img" /><div class="post-acts"><i class="fa-regular fa-heart"></i><i class="fa-regular fa-comment"></i><i class="fa-regular fa-paper-plane"></i></div><p class="post-cap">view post on instagram</p></a>
+      <div class="post post-multi"><div class="post-head"><b class="avatar">b</b>btwnthebindings_</div><div class="post-media"><div class="post-track"><video src="./videos/ig3.mp4" poster="./images/ig3.jpg" muted loop playsinline preload="metadata" data-autoplay></video><video src="./videos/ig2.mp4" poster="./images/ig2.jpg" muted loop playsinline preload="metadata" data-autoplay></video></div><button class="post-arrow prev" aria-label="Previous">‹</button><button class="post-arrow next" aria-label="Next">›</button><span class="post-count"></span></div><div class="post-acts"><i class="fa-regular fa-heart"></i><i class="fa-regular fa-comment"></i><i class="fa-regular fa-paper-plane"></i><span class="post-dots"></span></div><p class="post-cap"><a href="socialmedia.html">view post on instagram</a></p></div>
+      <div class="post post-multi post-collage"><div class="post-head"><b class="avatar">b</b>btwnthebindings_</div><div class="post-media"><div class="post-track"><img loading="lazy" decoding="async" src="./images/ig4.jpeg" alt="slide 1" /><video src="./videos/igv4.mp4" poster="./images/igv4.jpg" muted loop playsinline preload="metadata" data-autoplay></video><img loading="lazy" decoding="async" src="./images/ig5.jpeg" alt="slide 3" /><img loading="lazy" decoding="async" src="./images/ig6.jpeg" alt="slide 4" /><img loading="lazy" decoding="async" src="./images/ig7.jpeg" alt="slide 5" /></div><button class="post-arrow prev" aria-label="Previous">‹</button><button class="post-arrow next" aria-label="Next">›</button><span class="post-count"></span></div><div class="post-acts"><i class="fa-regular fa-heart"></i><i class="fa-regular fa-comment"></i><i class="fa-regular fa-paper-plane"></i><span class="post-dots"></span></div><p class="post-cap"><a href="socialmedia.html">view post on instagram</a></p></div>
+    </div>
+  </section>
+
+  <section class="sec alt">
+    <div class="sec-head reveal"></div>
+    <div id="lookbook" class="reveal"></div>
+  </section>
 
   <footer class="site-footer">
     <div class="footer-brand">betweenthebindings</div>
@@ -122,32 +84,11 @@
 
 
 
-<!-- Y2K Digital Pet Widget -->
-<div class="pet-widget" id="petWidget">
-  <div class="pet-screen">
-    <!-- Speech Bubble -->
-    <div class="pet-bubble" id="petBubble">✦ click to play!</div>
-
-    <!-- Pixel Pet Character -->
-    <div class="pet-character" id="petChar">
-      <span class="pet-face">( • ‿ • )</span>
-      <span class="pet-accessory" id="petAcc"></span>
-    </div>
-
-    <!-- Hearts/Sparkles Animation Container -->
-    <div class="pet-particles" id="petParticles"></div>
-  </div>
-
-  <!-- Interactive Buttons -->
-  <div class="pet-controls">
-    <button class="pet-btn" id="feedPetBtn" title="Feed Star">Feed</button>
-    <button class="pet-btn" id="stylePetBtn" title="Try Shades">🕶️ Fit</button>
-    <button class="pet-btn" id="patPetBtn" title="Pat Head">♡ Pat</button>
-  </div>
-</div>
-
-
- <script type="module" src="script.js"></script>
+<script type="module" src="navbar.js"></script>
+  <script type="module" src="camcorder.js"></script>
+  <script type="module" src="lookbook.js"></script>
+  <script type="module" src="script.js"></script>
+  <script type="module" src="posts.js"></script>
 <script type="module" src="sparkles.js"></script>
 
 </body>

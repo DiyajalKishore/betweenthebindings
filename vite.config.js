@@ -1,20 +1,18 @@
 import { defineConfig } from 'vite';
+import { fileURLToPath } from 'url';
+import { readdirSync } from 'fs';
 import { resolve } from 'path';
+
+const root = fileURLToPath(new URL('.', import.meta.url));
+
+const input = Object.fromEntries(
+  readdirSync(root)
+    .filter((file) => file.endsWith('.html'))
+    .map((file) => [file.replace('.html', ''), resolve(root, file)])
+);
 
 export default defineConfig({
   build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        about: resolve(__dirname, 'about.html'),
-        art: resolve(__dirname, 'art.html'),
-        buriedbetweenthebindings: resolve(__dirname, 'buriedbetweenthebindings.html'),
-        creatingcommunity: resolve(__dirname, 'creatingcommunity.html'),
-        griefgathersandgrows: resolve(__dirname, 'griefgathersandgrows.html'),
-        melvilleartmile: resolve(__dirname, 'melvilleartmile.html'),
-        thunee: resolve(__dirname, 'thunee.html'),
-        writing: resolve(__dirname, 'writing.html'),
-      }
-    }
-  }
+    rollupOptions: { input },
+  },
 });

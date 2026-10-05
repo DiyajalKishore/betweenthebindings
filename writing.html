@@ -10,93 +10,123 @@
   <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="pg-writing">
 
-  <header class="navbar">
-    <a href="index.html" class="brand">betweenthebindings</a>
-    <nav class="nav-links">
-      <a href="writing.html" class="active">writing</a>
-      <a href="about.html">about</a>
-      <a href="https://www.instagram.com/btwnthebindings_?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
-        <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-      </a>
-      <a href="https://substack.com/@betweenthebindings" target="_blank" style="color:white; font-size:24px;">
-       <img src="./images/substack-logo.svg" alt="Substack" style="width:24px; height:24px; filter:invert(1);">
-      </a>
-    </nav>
-  </header>
+  <div id="site-nav" data-active="writing.html"></div>
+  <section class="page-hero">
+    <div class="aurora"><i></i><i></i><i></i></div>
+    <h1>writing</h1>
+    <div class="chips" id="filters"><button class="chip active" data-f="all">all</button><button class="chip" data-f="feature">feature</button><button class="chip" data-f="slice">slice</button><button class="chip" data-f="review">review</button><button class="chip" data-f="news">news</button></div>
+  </section>
 
-  <main class="articles-feed">
+  <main class="articles-feed" id="feed">
 
-    <article class="article-card">
-      <div class="article-image-wrapper">
-        <img src="./images/arttitle.jpg" alt="art img" />
+     <article class="article-card reveal" data-cat="feature">
+      <div class="article-image-wrapper"><span class="tag">feature</span>
+        <img loading="lazy" decoding="async" src="./images/cleangirl.jpg" alt="death of the clean girl img" />
+      </div>
+      <div class="article-content">
+        <span class="article-date">07/09/26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 min read</span>
+        <h2 class="article-title">The Death Of The Clean Girl</h2>
+        <p class="article-excerpt">The clean girl aesthetic whispers, but creative makeup is yelling: “I’m back, bitches!”   </p>
+        <a href="cleangirl.html" class="read-more-link">read →</a>
+      </div>
+    </article>
+
+     <article class="article-card reveal" data-cat="news">
+      <div class="article-image-wrapper"><span class="tag">news</span>
+        <img loading="lazy" decoding="async" src="./images/ai.jpg" alt="AI Innovation img" />
+      </div>
+      <div class="article-content">
+        <span class="article-date">11/08/26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 min read</span>
+        <h2 class="article-title">Wits student wins Gauteng Falling Walls Lab, Heads to Berlin with AI Innovation</h2>
+        <p class="article-excerpt">Young researchers gather at Wits to present solutions to rising global issues.</p>
+        <a href="ai.html" class="read-more-link">read →</a>
+      </div>
+    </article>
+
+    <article class="article-card reveal" data-cat="slice">
+      <div class="article-image-wrapper"><span class="tag">slice</span>
+        <img loading="lazy" decoding="async" src="./images/baddest.jpg" alt="baddest img" />
+      </div>
+      <div class="article-content">
+        <span class="article-date">10/08/26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 min read</span>
+        <h2 class="article-title">The baddest b*tches ain’t in LA </h2>
+        <p class="article-excerpt">Music has transcended borders and languages: why haven’t the Grammys?  </p>
+        <a href="baddest.html" class="read-more-link">read →</a>
+      </div>
+    </article>
+
+    <article class="article-card reveal" data-cat="review">
+      <div class="article-image-wrapper"><span class="tag">review</span>
+        <img loading="lazy" decoding="async" src="./images/spiderman.jpg" alt="spiderman img" />
+      </div>
+      <div class="article-content">
+        <span class="article-date">10/08/26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 min read</span>
+        <h2 class="article-title">Our favourite friendly neighbourhood Spider-Man is back!</h2>
+        <p class="article-excerpt">After five years of waiting, Spider-Man swings back onto our screens, and straight into his identity crisis.</p>
+        <a href="spiderman.html" class="read-more-link">read →</a>
+      </div>
+    </article>
+    
+    <article class="article-card reveal" data-cat="slice">
+      <div class="article-image-wrapper"><span class="tag">slice</span>
+        <img loading="lazy" decoding="async" src="./images/pat.jpg" alt="pat img" />
+      </div>
+      <div class="article-content">
+        <span class="article-date">05/08/26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 min read</span>
+        <h2 class="article-title">Women can do anything men can do, but maybe we shouldn’t</h2>
+        <p class="article-excerpt">There is something distinctly inherited about misogyny.</p>
+        <a href="womancandoanything.html" class="read-more-link">read →</a>
+      </div>
+    </article>
+
+
+    <article class="article-card reveal" data-cat="slice">
+      <div class="article-image-wrapper"><span class="tag">slice</span>
+        <img loading="lazy" decoding="async" src="./images/arttitle.jpg" alt="art img" />
       </div>
       <div class="article-content">
         <span class="article-date">18/05/26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 min read</span>
         <h2 class="article-title">Who gets to dictate what art should be?</h2>
         <p class="article-excerpt">Everyone has a different opinion on what art is, but who decides which art is acceptable?</p>
-        <a href="art.html" class="read-more-link">Read More</a>
+        <a href="art.html" class="read-more-link">read →</a>
       </div>
     </article>
 
-     <article class="article-card">
-      <div class="article-image-wrapper">
-        <img src="./images/mam1.jpg" alt="mam img" />
+     <article class="article-card reveal" data-cat="feature">
+      <div class="article-image-wrapper"><span class="tag">feature</span>
+        <img loading="lazy" decoding="async" src="./images/mam1.jpg" alt="mam img" />
       </div>
       <div class="article-content">
         <span class="article-date">15/05/26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 min read</span>
         <h2 class="article-title">Melville Art Mile – where art belongs to everyone</h2>
         <p class="article-excerpt">The Melville Art Mile reactivates the creative heritage of the suburb.</p>
-        <a href="melvilleartmile.html" class="read-more-link">Read More</a>
+        <a href="melvilleartmile.html" class="read-more-link">read →</a>
       </div>
     </article>
 
-    <article class="article-card">
-      <div class="article-image-wrapper">
-        <img src="./images/thunee.jpg" alt="thunee img" />
+    <article class="article-card reveal" data-cat="feature">
+      <div class="article-image-wrapper"><span class="tag">feature</span>
+        <img loading="lazy" decoding="async" src="./images/thunee.jpg" alt="thunee img" />
       </div>
       <div class="article-content">
         <span class="article-date">13/05/26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 min read</span>
         <h2 class="article-title">Thunee is more than just a game, it’s culture of connection</h2>
         <p class="article-excerpt">As the cold begins to settle and the due dates creep closer, the Wits Hindu Students Society creates a home away from home by hosting a Thunee tournament on campus.</p>
-        <a href="thunee.html" class="read-more-link">Read More</a>
+        <a href="thunee.html" class="read-more-link">read →</a>
       </div>
     </article>
 
-    <article class="article-card">
-      <div class="article-image-wrapper">
-        <img src="./images/comm.jpeg" alt="creating community img" />
+    <article class="article-card reveal" data-cat="feature">
+      <div class="article-image-wrapper"><span class="tag">feature</span>
+        <img loading="lazy" decoding="async" src="./images/comm.jpeg" alt="creating community img" />
       </div>
       <div class="article-content">
         <span class="article-date">06/05/26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 min read</span>
         <h2 class="article-title">creating community — how queer spaces save lives</h2>
         <p class="article-excerpt">GALA Queer Archive creates welcoming communities for queer youth, a third space for them to exist as themselves, unashamedly, creating a semblance of home.</p>
-        <a href="creatingcommunity.html" class="read-more-link">Read More</a>
-      </div>
-    </article>
-
-    <article class="article-card">
-      <div class="article-image-wrapper">
-        <img src="./images/grief.jpg" alt="grief gather and grows img" />
-      </div>
-      <div class="article-content">
-        <span class="article-date">20/04/26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 min read</span>
-        <h2 class="article-title">grief gathers and grows</h2>
-        <p class="article-excerpt">do you think i have forgotten?</p>
-        <a href="griefgathersandgrows.html" class="read-more-link">Read More</a>
-      </div>
-    </article>
-
-    <article class="article-card">
-      <div class="article-image-wrapper">
-        <img src="./images/melodrama.jpg.webp" alt="Melodrama by Lorde" />
-      </div>
-      <div class="article-content">
-        <span class="article-date">03/03/26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 min read</span>
-        <h2 class="article-title">buried between the bindings</h2>
-        <p class="article-excerpt">when is my heart full and no longer starving?</p>
-        <a href="buriedbetweenthebindings.html" class="read-more-link">Read More</a>
+        <a href="creatingcommunity.html" class="read-more-link">read →</a>
       </div>
     </article>
   </main>
@@ -110,6 +140,7 @@
     </div>
   </footer>
 
+  <script type="module" src="navbar.js"></script>
   <script type="module" src="script.js"></script>
 <script type="module" src="sparkles.js"></script>
 </body>
