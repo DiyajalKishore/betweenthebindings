@@ -1,43 +1,43 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const addButtons = document.querySelectorAll('.add-btn');
-  addButtons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-      console.log('Product slot ' + (index + 1) + ' clicked');
-    });
-  });
-});
+// Share button (footer of every page): uses the phone's share menu, or copies the link.
+function toast(msg) {
+  const t = document.createElement('div');
+  t.className = 'share-toast';
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2200);
+}
 
-function shareContent() {
+async function shareContent() {
+  const data = { title: document.title, url: location.href };
   if (navigator.share) {
-    navigator.share({
-      title: 'Between the Bindings',
-      text: 'Check out this video/article!',
-      url: window.location.href
-    }).catch(err => console.log('Share failed:', err));
-  } else {
-    alert('Sharing not supported on this browser');
+    try { await navigator.share(data); } catch { /* closed the share sheet */ }
+    return;
+  }
+  try {
+    await navigator.clipboard.writeText(location.href);
+    toast('link copied ✦');
+  } catch {
+    prompt('copy this link:', location.href);
   }
 }
 
+document.querySelectorAll('.share-btn').forEach((btn) => {
+  btn.setAttribute('aria-label', 'Share this page');
+  btn.addEventListener('click', shareContent);
+});
 
 
-
-let index = 0;
-const track = document.querySelector('.carousel-track');
-const slides = document.querySelectorAll('.carousel-track img');
-const total = slides.length;
-
-function showSlide(i) {
-  track.style.transform = `translateX(-${i * 400}px)`;
-}
-
-function autoScroll() {
-  index = (index + 1) % total;
-  showSlide(index);
-}
-
-// change slide every 3 seconds
-if (track) setInterval(autoScroll, 3000);
+// Simple auto-sliding photo carousel (thunee.html)
+document.querySelectorAll('.carousel').forEach((carousel) => {
+  const track = carousel.querySelector('.carousel-track');
+  const total = track ? track.children.length : 0;
+  if (total < 2) return;
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % total;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }, 3000);
+});
 
 function initArrowCarousel(root) {
   const images = JSON.parse(root.dataset.images || "[]");
